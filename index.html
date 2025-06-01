@@ -3,285 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habib Traders - Professional Profile</title>
+    <title>Business Directory | Find Local Companies</title>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #27ae60;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
+        /* Global Styles */
+        * {
+            margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background-color: #0066cc;
             color: white;
-            padding: 2rem 0;
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
+            padding: 10px 0;
         }
-        
-        .logo-container {
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header-container {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            align-items: center;
         }
-        
-        .logo-container img {
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        .header-links a {
+            color: white;
+            margin-left: 15px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Search Section */
+        .search-section {
+            background-color: #e6e6e6;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .search-box {
+            padding: 10px;
+            width: 60%;
+            max-width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #0055aa;
+        }
+
+        /* Categories */
+        .categories {
+            padding: 30px 0;
+        }
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 5px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .category-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
             transition: transform 0.3s;
         }
-        
-        .logo-container img:hover {
-            transform: scale(1.05);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            opacity: 0.9;
-        }
-        
-        .container {
-            padding: 2rem;
-        }
-        
-        section {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-        
-        h3 {
-            color: var(--secondary);
-        }
-        
-        .contact-info {
-            background: var(--light);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
-        
-        .business-card {
-            background: linear-gradient(to right, #f8f9fa, #e9ecef);
-            border-left: 4px solid var(--secondary);
-            padding: 1rem;
-            margin: 1rem 0;
-            border-radius: 0 5px 5px 0;
-        }
-        
-        .business-card h3 {
-            margin-top: 0;
-            color: var(--dark);
-        }
-        
-        .whatsapp-btn {
-            display: inline-block;
-            background: #25D366;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin-top: 10px;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s;
-        }
-        
-        .whatsapp-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .service-card {
-            background: white;
-            border: 1px solid #ddd;
-            padding: 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        
-        .service-card:hover {
+        .category-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            border-color: var(--secondary);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--secondary);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -28px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent);
-            border: 2px solid white;
-        }
-        
+
+        /* Footer */
         footer {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--dark);
+            background-color: #333;
             color: white;
-            margin-top: 2rem;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 30px;
         }
-        
-        @media (max-width: 768px) {
-            .logo-container {
-                flex-direction: column;
-                align-items: center;
-            }
+        .footer-links {
+            margin-top: 10px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo-container">
-            <img src="images/logo.png" alt="Logo" width="150">
-            <img src="images/profile.jpeg" alt="profile" width="150">
+        <div class="container header-container">
+            <div class="logo">BusinessDirectory.com</div>
+            <div class="header-links">
+                <a href="#">Add Your Business</a>
+                <a href="#">Login</a>
+            </div>
         </div>
-        <h1>Habib ur Rehman</h1>
-        <p class="tagline">Entrepreneur | Business Consultant | Technical Services Provider</p>
     </header>
 
-    <div class="container">
-        <section>
-            <h2>Professional Profile</h2>
-            <p>Experienced entrepreneur with successful ventures in trading, travel services, and technical solutions. Currently expanding operations to Estonia with a focus on technical and security services.</p>
-        </section>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Businesses</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="#">Cities</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <section>
-            <h2>Current Business Ventures</h2>
-            
-            <div class="business-card">
-                <h3>Habib Traders (Sole Proprietorship)</h3>
-                <p><strong>Position:</strong> CEO</p>
-                <p><strong>Founded:</strong> February 2020</p>
-                <p><strong>Reference Number:</strong> 6938581-4 (FBR, Pakistan)</p>
-                <p><strong>Location:</strong> Rawalpindi, Pakistan</p>
-                <p><strong>Website:</strong> <a href="https://habibtraders01.vercel.app" target="_blank">habibtraders01.vercel.app</a></p>
-            </div>
-            
-            <div class="business-card">
-                <h3>MRT Travel and Tours (PVT LTD)</h3>
-                <p><strong>Position:</strong> Director</p>
-                <p><strong>Reference Number:</strong> F953853 (FBR)</p>
-                <p><strong>Location:</strong> Rawalpindi, Pakistan</p>
-            </div>
-        </section>
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <h1>Find Local Businesses</h1>
+            <form action="/search" method="get">
+                <input type="text" class="search-box" placeholder="Search by business name or category">
+                <button type="submit" class="search-button">Search</button>
+            </form>
+            <p style="margin-top: 10px;">Browse by <a href="#">category</a> or <a href="#">location</a></p>
+        </div>
+    </section>
 
-        <section>
-            <h2>Planned Business in Estonia</h2>
-            <p>The new company in Estonia will focus on technical services, including:</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <h4>Installation and Maintenance</h4>
-                    <p>CCTV systems and security equipment</p>
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Popular Business Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <h3>Restaurants</h3>
+                    <p>1,200+ Listings</p>
                 </div>
-                <div class="service-card">
-                    <h4>Technical Equipment</h4>
-                    <p>Sales and servicing of technical solutions</p>
+                <div class="category-card">
+                    <h3>Retail Stores</h3>
+                    <p>950+ Listings</p>
                 </div>
-                <div class="service-card">
-                    <h4>IT Support</h4>
-                    <p>Consulting and technical support services</p>
+                <div class="category-card">
+                    <h3>Healthcare</h3>
+                    <p>750+ Listings</p>
                 </div>
-                <div class="service-card">
-                    <h4>Partnerships</h4>
-                    <p>Tourism and digital service delivery</p>
+                <div class="category-card">
+                    <h3>Automotive</h3>
+                    <p>600+ Listings</p>
                 </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Healthcare Institutions</h3>
-                    <p>RIUT Hospitals, Holy Family Hospital, and various private sector firms</p>
+                <div class="category-card">
+                    <h3>Real Estate</h3>
+                    <p>500+ Listings</p>
                 </div>
-                <div class="timeline-item">
-                    <h3>Reference Documents</h3>
-                    <p>Work orders and professional references available upon request</p>
+                <div class="category-card">
+                    <h3>Home Services</h3>
+                    <p>450+ Listings</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <h2>Contact Information</h2>
-            <div class="contact-info">
-                <p><strong>Business Name:</strong> Habib Traders</p>
-                <p><strong>NTN:</strong> 6938581-4</p>
-                <p><strong>Proprietor:</strong> Habib ur Rehman</p>
-                <p><strong>Business Address:</strong> Near Street No. 29, Allama Iqbal Colony, Tench Bhatta, Rawalpindi</p>
-                <p><strong>Contact Numbers:</strong> 0334-1008769, 0302-1309900</p>
-                <p><strong>Email:</strong> habiburrehman8769@gmail.com</p>
-                
-                <a href="https://wa.me/923341008769" class="whatsapp-btn">Chat on WhatsApp</a>
-            </div>
-        </section>
-    </div>
-
+    <!-- Footer -->
     <footer>
-        &copy; 2023 Habib Traders. All Rights Reserved.
+        <div class="container">
+            <p>&copy; 2023 BusinessDirectory.com. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
