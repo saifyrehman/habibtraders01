@@ -3,82 +3,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habib Traders - Rawalpindi</title>
+    <title>Habib Traders - Professional Profile</title>
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
             color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f9f9f9;
         }
+        
         header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            margin-bottom: 30px;
+            border-bottom: 5px solid var(--accent);
         }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-container img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+        
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+        
         h1 {
-            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .container {
+            padding: 2rem;
+        }
+        
+        section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: var(--secondary);
+        }
+        
         .contact-info {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
         }
+        
+        .business-card {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .business-card h3 {
+            margin-top: 0;
+            color: var(--dark);
+        }
+        
         .whatsapp-btn {
             display: inline-block;
             background: #25D366;
             color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 12px 25px;
+            border-radius: 50px;
             text-decoration: none;
             margin-top: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s;
         }
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -28px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid white;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--dark);
+            color: white;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="images/logo.png" alt="Habib Traders Logo" width="150">
-            <img src="images/profile.jpeg" alt="Habib ur Rehman Profile" width="150">
+            <img src="images/logo.png" alt="Logo" width="150">
+            <img src="images/profile.jpeg" alt="profile" width="150">
         </div>
-        <h1>Habib Traders</h1>
-        <p>Your trusted business partner in Rawalpindi</p>
+        <h1>Habib ur Rehman</h1>
+        <p class="tagline">Entrepreneur | Business Consultant | Technical Services Provider</p>
     </header>
 
-    <!-- Rest of your content remains the same -->
-    <section>
-        <h2>Business Information</h2>
-        <div class="contact-info">
-            <p><strong>Proprietor:</strong> Habib ur Rehman</p>
-            <p><strong>NTN:</strong> 6938581-4</p>
-            <p><strong>Address:</strong> Near Street No. 29, Allama Iqbal Colony, Tench Bhatta, Rawalpindi</p>
-            <p><strong>Phone:</strong> 0334-1008769, 0302-1309900</p>
-            <p><strong>Email:</strong> habiburrehman8769@gmail.com</p>
-        </div>
-        
-        <a href="https://wa.me/923341008769" class="whatsapp-btn">Chat on WhatsApp</a>
-    </section>
+    <div class="container">
+        <section>
+            <h2>Professional Profile</h2>
+            <p>Experienced entrepreneur with successful ventures in trading, travel services, and technical solutions. Currently expanding operations to Estonia with a focus on technical and security services.</p>
+        </section>
 
-    <section>
-        <h2>About Us</h2>
-        <p>Habib Traders is a trusted name in Rawalpindi specializing in quality goods and services. With a commitment to customer satisfaction and professional ethics, we ensure excellence in every transaction. Located in the heart of Tench Bhatta, we proudly serve clients across the city and beyond.</p>
-    </section>
+        <section>
+            <h2>Current Business Ventures</h2>
+            
+            <div class="business-card">
+                <h3>Habib Traders (Sole Proprietorship)</h3>
+                <p><strong>Position:</strong> CEO</p>
+                <p><strong>Founded:</strong> February 2020</p>
+                <p><strong>Reference Number:</strong> 6938581-4 (FBR, Pakistan)</p>
+                <p><strong>Location:</strong> Rawalpindi, Pakistan</p>
+                <p><strong>Website:</strong> <a href="https://habibtraders01.vercel.app" target="_blank">habibtraders01.vercel.app</a></p>
+            </div>
+            
+            <div class="business-card">
+                <h3>MRT Travel and Tours (PVT LTD)</h3>
+                <p><strong>Position:</strong> Director</p>
+                <p><strong>Reference Number:</strong> F953853 (FBR)</p>
+                <p><strong>Location:</strong> Rawalpindi, Pakistan</p>
+            </div>
+        </section>
 
-    <section>
-        <h2>Services</h2>
-        <ul>
-            <li>Wholesale and retail supply</li>
-            <li>Business consultancy</li>
-            <li>Trade and general order supply</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Planned Business in Estonia</h2>
+            <p>The new company in Estonia will focus on technical services, including:</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h4>Installation and Maintenance</h4>
+                    <p>CCTV systems and security equipment</p>
+                </div>
+                <div class="service-card">
+                    <h4>Technical Equipment</h4>
+                    <p>Sales and servicing of technical solutions</p>
+                </div>
+                <div class="service-card">
+                    <h4>IT Support</h4>
+                    <p>Consulting and technical support services</p>
+                </div>
+                <div class="service-card">
+                    <h4>Partnerships</h4>
+                    <p>Tourism and digital service delivery</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Healthcare Institutions</h3>
+                    <p>RIUT Hospitals, Holy Family Hospital, and various private sector firms</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Reference Documents</h3>
+                    <p>Work orders and professional references available upon request</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contact Information</h2>
+            <div class="contact-info">
+                <p><strong>Business Name:</strong> Habib Traders</p>
+                <p><strong>NTN:</strong> 6938581-4</p>
+                <p><strong>Proprietor:</strong> Habib ur Rehman</p>
+                <p><strong>Business Address:</strong> Near Street No. 29, Allama Iqbal Colony, Tench Bhatta, Rawalpindi</p>
+                <p><strong>Contact Numbers:</strong> 0334-1008769, 0302-1309900</p>
+                <p><strong>Email:</strong> habiburrehman8769@gmail.com</p>
+                
+                <a href="https://wa.me/923341008769" class="whatsapp-btn">Chat on WhatsApp</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2023 Habib Traders. All Rights Reserved.
+    </footer>
 </body>
 </html>
